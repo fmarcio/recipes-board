@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/recipes-board/static/css/main.cacc66f2.chunk.css",
-    "main.js": "/recipes-board/static/js/main.8c14ae87.chunk.js",
-    "main.js.map": "/recipes-board/static/js/main.8c14ae87.chunk.js.map",
+    "main.css": "/recipes-board/static/css/main.5d03a9c0.chunk.css",
+    "main.js": "/recipes-board/static/js/main.80449bd6.chunk.js",
+    "main.js.map": "/recipes-board/static/js/main.80449bd6.chunk.js.map",
     "runtime-main.js": "/recipes-board/static/js/runtime-main.d921846b.js",
     "runtime-main.js.map": "/recipes-board/static/js/runtime-main.d921846b.js.map",
     "static/js/2.f438e689.chunk.js": "/recipes-board/static/js/2.f438e689.chunk.js",
     "static/js/2.f438e689.chunk.js.map": "/recipes-board/static/js/2.f438e689.chunk.js.map",
     "index.html": "/recipes-board/index.html",
-    "static/css/main.cacc66f2.chunk.css.map": "/recipes-board/static/css/main.cacc66f2.chunk.css.map",
+    "static/css/main.5d03a9c0.chunk.css.map": "/recipes-board/static/css/main.5d03a9c0.chunk.css.map",
     "static/js/2.f438e689.chunk.js.LICENSE.txt": "/recipes-board/static/js/2.f438e689.chunk.js.LICENSE.txt",
     "static/media/brightness_icon.f1b3900c.svg": "/recipes-board/static/media/brightness_icon.f1b3900c.svg",
     "static/media/clock-icon.31bea82c.svg": "/recipes-board/static/media/clock-icon.31bea82c.svg",
@@ -17,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.d921846b.js",
     "static/js/2.f438e689.chunk.js",
-    "static/css/main.cacc66f2.chunk.css",
-    "static/js/main.8c14ae87.chunk.js"
+    "static/css/main.5d03a9c0.chunk.css",
+    "static/js/main.80449bd6.chunk.js"
   ]
 }
