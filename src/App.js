@@ -22,6 +22,11 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
+
+          <Route exact path="/recipes-board">
+            <Home />
+          </Route>
+
           <Route path="/create">
             <Create />
           </Route>
