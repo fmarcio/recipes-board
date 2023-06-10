@@ -1,8 +1,8 @@
 # Recipes Board
 
-Simple app in React to practice some of its core concepts such as hooks, routes (5.1 version), controlled inputs, etc/
+Simple app in React to practice some of its core concepts such as hooks, routes (5.1 version), controlled inputs, etc.
 
-Backend is using Firebase.
+Deployed [here](https://fmarcio.github.io/recipes-board). Backend is using Firebase.
 
 This project is based on Shaun Pelling (aka the Net Ninja) 'Cooking Ninja' project available on his [course](https://www.udemy.com/course/build-web-apps-with-react-firebase/)
 
