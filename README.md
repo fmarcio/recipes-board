@@ -1,78 +1,56 @@
 # Recipes Board
 
-Simple app in React to practice some of its core concepts such as hooks, routes (5.1 version), controlled inputs, etc.
+# Deployed [here](https://fmarcio.github.io/recipes-board)
 
-Deployed [here](https://fmarcio.github.io/recipes-board). Backend is using Firebase.
+## Overview
+A modern, responsive recipe management application built with **React**, **Vite**, and **TypeScript**. This project features real-time data synchronization with **Firebase Firestore**, custom theme selection, and comprehensive unit testing.
 
-This project is based on Shaun Pelling (aka the Net Ninja) 'Cooking Ninja' project available on his [course](https://www.udemy.com/course/build-web-apps-with-react-firebase/)
+## Tech Stack
+- **Framework:** React (Latest)
+- **Build Tool:** Vite
+- **Language:** TypeScript (Strict Mode)
+- **Database:** Firebase Firestore (Modular v10 API)
+- **Routing:** React Router v6 (HashRouter for GitHub Pages)
+- **Testing:** Vitest & React Testing Library
+- **Styling:** Vanilla CSS with Responsive Media Queries
 
-# Getting Started with Create React App
+## Features
+- **Real-time Recipes:** Fetch, add, and delete recipes in real-time.
+- **Theme Selector:** Toggle between Light/Dark modes and change primary accent colors.
+- **Responsive Design:** Optimized for mobile, tablet, and desktop viewports.
+- **Unit Tested:** Core components and pages are verified with automated tests.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Getting Started
 
-## Available Scripts
+### Prerequisites
+- Node.js (Latest LTS recommended)
+- Firebase Account (for Firestore)
 
-In the project directory, you can run:
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/fmarcio/recipes-board.git
+   cd recipes-board
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Create a `.env.local` file in the root and add your Firebase credentials:
+   ```env
+   VITE_FIREBASE_API_KEY=your_api_key
+   VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+   VITE_FIREBASE_PROJECT_ID=your_project_id
+   VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+   VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+   VITE_FIREBASE_APP_ID=your_app_id
+   ```
 
-### `npm start`
+### Available Scripts
+- `npm run dev`: Starts the development server.
+- `npm run build`: Builds the project for production.
+- `npm run test`: Runs unit tests.
+- `npm run deploy`: Deploys the application to GitHub Pages.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+*Based on the 'Cooking Ninja' project by Shaun Pelling (The Net Ninja).*
