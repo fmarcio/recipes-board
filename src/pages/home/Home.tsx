@@ -2,39 +2,43 @@ import React, { useEffect, useState } from "react";
 import RecipesList from "../../components/RecipesList";
 import "./Home.css";
 import { projectFirestore } from "../../firebase/config";
+import { collection, onSnapshot } from "firebase/firestore";
+import { Recipe } from "../../types";
 
 function Home() {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(false);
+  const [data, setData] = useState<Recipe[] | null>(null);
+  const [error, setError] = useState<string | null>(null);
   const [isPending, setIsPending] = useState(false);
 
   useEffect(() => {
     setIsPending(true);
 
-    // 'recipes' is the name of my collection on firebase
-    // the .get method here works like a http fetch request
-    const unsub = projectFirestore.collection("recipes").onSnapshot(
+    const ref = collection(projectFirestore, "recipes");
+
+    const unsub = onSnapshot(
+      ref,
       (snapshot) => {
         if (snapshot.empty) {
           setIsPending(false);
           setError("No recipes to load");
+          setData([]);
         } else {
-          let results = [];
+          const results: Recipe[] = [];
           snapshot.docs.forEach((doc) => {
-            results.push({ ...doc.data(), id: doc.id });
+            results.push({ ...(doc.data() as Omit<Recipe, "id">), id: doc.id });
           });
 
           setData(results);
           setIsPending(false);
+          setError(null);
         }
       },
-      (error) => {
-        setError(error.message);
+      (err) => {
+        setError(err.message);
         setIsPending(false);
       }
     );
 
-    // cleanup function
     return () => unsub();
   }, []);
 

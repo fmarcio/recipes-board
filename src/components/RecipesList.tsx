@@ -1,19 +1,26 @@
 import React from "react";
 import "./RecipesList.css";
 import { Link } from "react-router-dom";
-import useTheme from "../hooks/useTheme";
+import { useTheme } from "../hooks/useTheme";
 import TrashCan from "../assets/delete-icon.svg";
 import { projectFirestore } from "../firebase/config";
+import { doc, deleteDoc } from "firebase/firestore";
+import { Recipe } from "../types";
 
-export default function RecipesList({ recipes }) {
+interface RecipesListProps {
+  recipes: Recipe[];
+}
+
+export default function RecipesList({ recipes }: RecipesListProps) {
   const { mode } = useTheme();
 
   if (!recipes.length) {
     return <div className="error">No recipes found</div>;
   }
 
-  const handleClick = (id) => {
-    projectFirestore.collection("recipes").doc(id).delete();
+  const handleClick = (id: string) => {
+    const docRef = doc(projectFirestore, "recipes", id);
+    deleteDoc(docRef);
   };
 
   return (

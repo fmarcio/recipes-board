@@ -76,3 +76,16 @@ a.go-to-home:hover {
   background: #e4e4e4;
   color: #555;
 }
+
+@media (max-width: 768px) {
+  .recipe {
+    margin: 20px;
+    padding: 20px;
+  }
+  .method {
+    margin: 30px 10px;
+  }
+  .recipe ul {
+    flex-wrap: wrap;
+  }
+}

@@ -3,6 +3,7 @@ import RecipesList from "../../components/RecipesList";
 import { useFetch } from "../../hooks/useFetch";
 import { useLocation } from "react-router-dom";
 import "./Search.css";
+import { Recipe } from "../../types";
 
 function Search() {
   const queryString = useLocation().search;
@@ -10,7 +11,7 @@ function Search() {
   const query = queryParams.get("q");
 
   const url = "http://localhost:3000/recipes?q=" + query;
-  const { data, error, isPending } = useFetch(url);
+  const { data, error, isPending } = useFetch<Recipe[]>(url);
 
   return (
     <div>

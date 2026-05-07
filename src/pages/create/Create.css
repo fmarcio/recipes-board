@@ -40,3 +40,10 @@
 .dark .create {
   color: #e1d8d8;
 }
+
+@media (max-width: 768px) {
+  .create {
+    padding: 30px;
+    margin: 30px 20px;
+  }
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Searchbar from "./Searchbar";
-import useTheme from "../hooks/useTheme";
+import { useTheme } from "../hooks/useTheme";
 import "./Navbar.css";
 
 function Navbar() {

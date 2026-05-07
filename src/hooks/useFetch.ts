@@ -1,28 +1,23 @@
 import { useState, useEffect } from "react";
 
-// useFetch serve tanto para GET quanto POST. Por padrao ele sera GET, ou seja, tem que especificar quando
-// for usar para POST.
-
-export const useFetch = (url, method = "GET") => {
-  const [data, setData] = useState(null);
+export const useFetch = <T>(url: string, method = "GET") => {
+  const [data, setData] = useState<T | null>(null);
   const [isPending, setIsPending] = useState(false);
-  const [error, setError] = useState(null);
-  const [options, setOptions] = useState(null);
+  const [error, setError] = useState<string | null>(null);
+  const [options, setOptions] = useState<RequestInit | null>(null);
 
-  const postData = (postData) => {
+  const postData = (postBody: any) => {
     setOptions({
       method: "POST",
       headers: { "Content-type": "application/json" },
-      body: JSON.stringify(postData),
+      body: JSON.stringify(postBody),
     });
   };
 
   useEffect(() => {
     const controller = new AbortController();
 
-    // fetchOptions is useful only when the request is set as POST. When is a GET, it does not have effect.
-
-    const fetchData = async (fetchOptions) => {
+    const fetchData = async (fetchOptions?: RequestInit) => {
       setIsPending(true);
 
       try {
@@ -38,7 +33,7 @@ export const useFetch = (url, method = "GET") => {
         setIsPending(false);
         setData(data);
         setError(null);
-      } catch (err) {
+      } catch (err: any) {
         if (err.name === "AbortError") {
           console.log("the fetch was aborted");
         } else {

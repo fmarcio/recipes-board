@@ -26,3 +26,16 @@
   background: #fff;
   color: #333;
 }
+
+@media (max-width: 768px) {
+  .navbar nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .navbar a.brand {
+    margin-right: 0;
+  }
+  .navbar a:last-child {
+    margin-left: 0;
+  }
+}

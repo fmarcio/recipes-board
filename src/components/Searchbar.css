@@ -6,3 +6,9 @@
 .searchbar input {
   margin-left: 10px;
 }
+
+@media (max-width: 768px) {
+  .searchbar form {
+    justify-content: center;
+  }
+}

@@ -1,22 +1,23 @@
 import React, { useRef, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Create.css";
 import { projectFirestore } from "../../firebase/config";
+import { collection, addDoc } from "firebase/firestore";
 
 function Create() {
   const [title, setTitle] = useState("");
   const [method, setMethod] = useState("");
   const [cookingTime, setCookingTime] = useState("");
   const [newIngredient, setNewIngredient] = useState("");
-  const [ingredients, setIngredients] = useState([]);
-  const history = useHistory();
+  const [ingredients, setIngredients] = useState<string[]>([]);
+  const navigate = useNavigate();
 
-  const ingredientInput = useRef(null);
+  const ingredientInput = useRef<HTMLInputElement>(null);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const doc = {
+    const docBody = {
       title,
       method,
       cookingTime: cookingTime + " minutes",
@@ -24,29 +25,28 @@ function Create() {
     };
 
     try {
-      await projectFirestore.collection("recipes").add(doc);
-      history.push("/");
+      await addDoc(collection(projectFirestore, "recipes"), docBody);
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
   };
 
-  const handleAdd = (e) => {
+  const handleAdd = (e: React.MouseEvent) => {
     e.preventDefault();
     const ing = newIngredient.trim();
 
-    // if there's an ingredient AND if it's not repeated, include it on ings array.
     if (ing && !ingredients.includes(ing)) {
       setIngredients((prevIngredients) => [...prevIngredients, ing]);
     }
 
     setNewIngredient("");
-    ingredientInput.current.focus();
+    ingredientInput.current?.focus();
   };
 
   return (
     <div className="create">
-      <h2>Add a rew recipe:</h2>
+      <h2>Add a new recipe:</h2>
       <form onSubmit={handleSubmit}>
         <label>
           <span>Recipe title</span>

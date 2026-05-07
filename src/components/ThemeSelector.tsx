@@ -1,6 +1,6 @@
 import React from "react";
 import "./ThemeSelector.css";
-import useTheme from "../hooks/useTheme";
+import { useTheme } from "../hooks/useTheme";
 import modeIcon from "../assets/brightness_icon.svg";
 
 export default function ThemeSelector() {
